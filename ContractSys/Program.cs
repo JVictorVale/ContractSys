@@ -21,8 +21,13 @@ namespace ContractSys
 
             ContractService contractService = new ContractService(new PaypalService());
             contractService.ProcessContract(myContract, months);
-            
+
             Console.WriteLine();
+            Console.WriteLine("Installments: ");
+            foreach (Installment installment in myContract.Installments)
+            {
+                Console.WriteLine(installment);
+            }
         }
     }
 }
